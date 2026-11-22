@@ -75,7 +75,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="8dp"
                 android:backgroundTint="#2563EB"
-                android:text="Bật & Kiểm tra Shizuku / ADB"
+                android:text="Bật và Kiểm tra Shizuku / ADB"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp" />
