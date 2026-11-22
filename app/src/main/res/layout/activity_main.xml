@@ -1,94 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121214">
+    android:background="#0F172A"
+    android:fillViewport="true">
 
-    <!-- 1. CONTROLLER DASHBOARD VIEW -->
     <LinearLayout
-        android:id="@+id/controllerLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:visibility="visible">
+        android:padding="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="VF5 CarDesktop"
-            android:textColor="#FFFFFF"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="● Đã sẵn sàng kết nối Android Auto trên xe VF5"
-            android:textColor="#34D399"
-            android:textSize="13sp" />
-
-        <!-- Quick Switch to HUD Button -->
-        <Button
-            android:id="@+id/btnEnterHud"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#059669"
-            android:text="🚀 Bật chế độ HUD phản chiếu kính lái"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <!-- Shizuku & ADB Status -->
+        <!-- Header Card: Connection Status -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="#1E1E24"
+            android:background="#1E293B"
             android:orientation="vertical"
-            android:padding="12dp">
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cơ chế mở ứng dụng gốc (Native Apps):"
-                android:textColor="#9CA3AF"
-                android:textSize="12sp"
+                android:text="VF5 CarDesktop Studio"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvShizukuStatus"
+                android:id="@+id/tvAutoStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="⚪ Đang chờ cắm USB kết nối Android Auto trên xe VF5"
+                android:textColor="#94A3B8"
+                android:textSize="13sp" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Trạng thái Shizuku/ADB: Sẵn sàng (Hỗ trợ mở Vietmap / Maps / YouTube)"
+                android:text="Không cần chiếu kính lái HUD. Màn hình xe VF5 sẽ tự hiển thị giao diện đa nhiệm khi kết nối."
                 android:textColor="#38BDF8"
-                android:textSize="13sp" />
-
-            <Button
-                android:id="@+id/btnCheckAdb"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="#2563EB"
-                android:text="Bật và Kiểm tra Shizuku / ADB"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Layout Controls -->
+        <!-- Section 1: Choose Car Screen Layout -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Bố cục màn hình xe VF5:"
-            android:textColor="#9CA3AF"
-            android:textSize="12sp"
+            android:layout_marginTop="20dp"
+            android:text="1. CHỌN BỐ CỤC MÀN HÌNH XE VF5:"
+            android:textColor="#F59E0B"
+            android:textSize="13sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -98,157 +62,374 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnLayout50"
-                android:layout_width="0dp"
-                android:layout_height="42dp"
-                android:layout_marginEnd="4dp"
-                android:layout_weight="1"
-                android:backgroundTint="#374151"
-                android:text="50 / 50"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp" />
-
-            <Button
                 android:id="@+id/btnLayout70"
                 android:layout_width="0dp"
-                android:layout_height="42dp"
+                android:layout_height="44dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:backgroundTint="#374151"
+                android:backgroundTint="#2563EB"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
                 android:text="70 / 30"
                 android:textColor="#FFFFFF"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnLayout50"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="50 / 50"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnLayout3Pane"
                 android:layout_width="0dp"
-                android:layout_height="42dp"
+                android:layout_height="44dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:backgroundTint="#374151"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
                 android:text="3 Ô"
                 android:textColor="#FFFFFF"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnLayoutFull"
                 android:layout_width="0dp"
-                android:layout_height="42dp"
+                android:layout_height="44dp"
                 android:layout_weight="1"
-                android:backgroundTint="#374151"
-                android:text="Full"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Toàn màn"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Section 2: Customize Tile 1 (Primary / Left) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="2. TÙY BIẾN Ô 1 (Ô CHÍNH LỚN BÊN TRÁI):"
+            android:textColor="#F59E0B"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPane1Maps"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2563EB"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Google Maps"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnPane1Vietmap"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Vietmap"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnPane1OsmDark"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Bản đồ Tối"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnPane1YouTube"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="YouTube"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Section 3: Customize Tile 2 (Secondary 1) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="3. TÙY BIẾN Ô 2 (Ô PHỤ TRÊN HOẶC PHẢI):"
+            android:textColor="#F59E0B"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPane2YouTube"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2563EB"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="YouTube"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnPane2TikTok"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="TikTok"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnPane2Zing"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Zing MP3"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnPane2Vietmap"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Vietmap"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Section 4: Customize Tile 3 (Secondary 2 in 3-Pane Mode) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="4. TÙY BIẾN Ô 3 (KHI CHỌN CHẾ ĐỘ 3 Ô):"
+            android:textColor="#F59E0B"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPane3TikTok"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2563EB"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="TikTok"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnPane3YouTube"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="YouTube"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnPane3Vietmap"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Vietmap"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnPane3Zing"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Zing MP3"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Section 5: Live Controls on Car -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="5. ĐIỀU KHIỂN NHANH TRỰC TIẾP TRÊN XE:"
+            android:textColor="#F59E0B"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnToggleCarEditMode"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#D97706"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="🎨 Bật viền cam tùy biến trực quan trên màn hình xe"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSwapPanes"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#475569"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="⇄ Đảo vị trí 2 ô"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnToggleSpeedBubble"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:backgroundTint="#DC2626"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="🔔 Bật/Tắt Biển Tốc độ"
+                android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Floating Overlay Toggle -->
-        <Button
-            android:id="@+id/btnToggleBubble"
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#D97706"
-            android:text="🔔 Bật / Tắt Bong bóng Cảnh báo Tốc độ (Vietmap / Waze)"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
-
-    </LinearLayout>
-
-    <!-- 2. FULLSCREEN HUD WINDSHIELD PROJECTION VIEW (Nhìn như trong video) -->
-    <LinearLayout
-        android:id="@+id/hudLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#000000"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:visibility="gone">
-
-        <!-- Invertable Container (for mirror reflection on windshield) -->
-        <LinearLayout
-            android:id="@+id/hudContentContainer"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvHudClock"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10:38"
-                android:textColor="#34D399"
-                android:textSize="72sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvHudSpeed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="96sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="KM/H"
-                    android:textColor="#9CA3AF"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="ĐẶT ĐIỆN THOẠI LÊN MẶT TAPLO ĐỂ PHẢN CHIẾU LÊN KÍNH LÁI"
-                android:textColor="#4B5563"
-                android:textSize="11sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <!-- HUD Controls Bar -->
+        <!-- Section 6: Native Apps with Shizuku -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginTop="20dp"
+            android:background="#1E293B"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mở ứng dụng gốc từ điện thoại (Vietmap, Maps, YouTube...):"
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvShizukuStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Trạng thái Shizuku/ADB: Sẵn sàng hỗ trợ mở trực tiếp App gốc."
+                android:textColor="#38BDF8"
+                android:textSize="12sp" />
 
             <Button
-                android:id="@+id/btnMirrorHud"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:backgroundTint="#2563EB"
-                android:text="🔄 Lật ngược chữ (Chiếu kính)"
+                android:id="@+id/btnCheckAdb"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#334155"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Kiểm tra kết nối Shizuku / Wireless ADB"
                 android:textAllCaps="false"
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/btnExitHud"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:backgroundTint="#DC2626"
-                android:text="✕ Đóng HUD"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
         </LinearLayout>
 
     </LinearLayout>
-
-</FrameLayout>
+</ScrollView>

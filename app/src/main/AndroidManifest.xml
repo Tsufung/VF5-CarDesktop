@@ -29,7 +29,7 @@
             android:name="androidx.car.app.minCarApiLevel"
             android:value="1" />
 
-        <!-- Phone Controller & Windshield HUD Activity -->
+        <!-- Phone Controller & Custom Studio Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
